@@ -13,7 +13,7 @@ describe('单元测试', () => {
   const fileUrl = 'file://' + path.resolve(__dirname, '..', 'index.html');
 
   before (async () => {
-    browser = await puppeteer.launch();
+    browser = await puppeteer.launch({ args: ['--no-sandbox', '--disable-setuid-sandbox'] });
   });
 
   beforeEach(async function() {
